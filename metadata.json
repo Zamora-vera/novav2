@@ -1,0 +1,6 @@
+{
+  "name": "Nova TV",
+  "description": "Una aplicación completa para televisor de Nova TV / CodeMorf TV. Canales en vivo, películas, trailers y más, diseñada para control remoto.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

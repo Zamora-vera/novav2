@@ -1,0 +1,94 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/apk/res/tools"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Glowing Background Aura / Shadow for the Starburst -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54">
+        <!-- Slightly scaled up, semi-transparent base for glow -->
+        <path
+            android:pathData="M54,10 L64,44 L98,54 L64,64 L54,98 L44,64 L10,54 L44,44 Z"
+            android:fillAlpha="0.3">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="10"
+                    android:startY="10"
+                    android:endX="98"
+                    android:endY="98"
+                    android:type="linear">
+                    <item android:offset="0.0" android:color="#00D1FF" />
+                    <item android:offset="1.0" android:color="#7000FF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+
+    <!-- First 4-pointed Star (Vertical & Horizontal alignment) -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54">
+        <path
+            android:pathData="M54,14 L62,46 L94,54 L62,62 L54,94 L46,62 L14,54 L46,46 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="14"
+                    android:startY="14"
+                    android:endX="94"
+                    android:endY="94"
+                    android:type="linear">
+                    <item android:offset="0.0" android:color="#00D1FF" />
+                    <item android:offset="0.5" android:color="#005BFF" />
+                    <item android:offset="1.0" android:color="#7000FF" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+
+    <!-- Second 4-pointed Star (Rotated 45 Degrees) -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:rotation="45">
+        <path
+            android:pathData="M54,14 L62,46 L94,54 L62,62 L54,94 L46,62 L14,54 L46,46 Z">
+            <aapt:attr name="android:fillColor">
+                <gradient
+                    android:startX="14"
+                    android:startY="14"
+                    android:endX="94"
+                    android:endY="94"
+                    android:type="linear">
+                    <item android:offset="0.0" android:color="#00D1FF" />
+                    <item android:offset="0.5" android:color="#1D4ED8" />
+                    <item android:offset="1.0" android:color="#A855F7" />
+                </gradient>
+            </aapt:attr>
+        </path>
+    </group>
+
+    <!-- Glowing center circle to blend the stars softly -->
+    <path
+        android:pathData="M54,54m-12,0a12,12 0 1,1 24,0a12,12 0 1,1 -24,0"
+        android:fillAlpha="0.45">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:centerX="54"
+                android:centerY="54"
+                android:gradientRadius="12"
+                android:type="radial">
+                <item android:offset="0.0" android:color="#FFFFFF" />
+                <item android:offset="1.0" android:color="#00D1FF" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Sharp white play icon in the dead center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M49,43.5 L64.5,54 L49,64.5 Z" />
+
+</vector>

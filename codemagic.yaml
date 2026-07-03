@@ -1,0 +1,38 @@
+﻿workflows:
+  nova-tv-debug-apk:
+    name: Nova TV Debug APK
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      java: 17
+    scripts:
+      - name: Dar permiso a Gradle
+        script: chmod +x ./gradlew
+      - name: Compilar APK de prueba
+        script: ./gradlew clean assembleDebug
+      - name: Preparar APK final
+        script: |
+          mkdir -p build/outputs/final
+          cp app/build/outputs/apk/debug/*.apk build/outputs/final/nova-tv-debug.apk
+    artifacts:
+      - build/outputs/final/nova-tv-debug.apk
+      - app/build/outputs/**/*.apk
+
+  nova-tv-release-unsigned-apk:
+    name: Nova TV Release APK Sin Firma
+    max_build_duration: 60
+    instance_type: mac_mini_m2
+    environment:
+      java: 17
+    scripts:
+      - name: Dar permiso a Gradle
+        script: chmod +x ./gradlew
+      - name: Compilar release sin firma
+        script: ./gradlew clean assembleRelease
+      - name: Preparar release APK
+        script: |
+          mkdir -p build/outputs/final
+          cp app/build/outputs/apk/release/*.apk build/outputs/final/nova-tv-release-unsigned.apk || true
+    artifacts:
+      - build/outputs/final/nova-tv-release-unsigned.apk
+      - app/build/outputs/**/*.apk
