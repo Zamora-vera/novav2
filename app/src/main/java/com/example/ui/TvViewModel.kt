@@ -351,10 +351,10 @@ class TvViewModel(application: Application) : AndroidViewModel(application) {
             repository.getContentConfig().fold(
                 onSuccess = { response ->
                     if (!response.countries.isNullOrEmpty()) {
-                        countriesList.value = response.countries
+                        countriesList.value = response.countries.orEmpty()
                     }
                     if (!response.languages.isNullOrEmpty()) {
-                        languagesList.value = response.languages
+                        languagesList.value = response.languages.orEmpty()
                     }
                 },
                 onFailure = {}
@@ -559,10 +559,10 @@ class TvViewModel(application: Application) : AndroidViewModel(application) {
             repository.getContentConfig().fold(
                 onSuccess = { response ->
                     if (!response.countries.isNullOrEmpty()) {
-                        countriesList.value = response.countries
+                        countriesList.value = response.countries.orEmpty()
                     }
                     if (!response.languages.isNullOrEmpty()) {
-                        languagesList.value = response.languages
+                        languagesList.value = response.languages.orEmpty()
                     }
                 },
                 onFailure = {
